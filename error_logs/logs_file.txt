@@ -1,0 +1,4 @@
+[ERROR]Exploto un avion
+[DEBUG]El debugger descompilo el programa
+[ERROR] Exploto un avion
+[DEBUG] El debugger descompilo el programa
