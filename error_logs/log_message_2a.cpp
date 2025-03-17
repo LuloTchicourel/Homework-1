@@ -36,8 +36,11 @@ void log_message(string message, levels level){
 }
 
 int main(){
-    log_message("Exploto un avion", levels::ERROR);
-    log_message("El debugger descompilo el programa", levels::DEBUG);
+    log_message("Se accedio a memoria invalida", levels::CRITICAL);
+    log_message("Se freno en la linea 5", levels::DEBUG);
+    log_message("No se puede restar un tipo list con un tipo map", levels::ERROR);
+    log_message("Casteo a int puede hacer perder precision del float", levels::WARNING);
+    log_message("El archivo de salida se creo con exito", levels::INFO);
     return 0;
 }
 
