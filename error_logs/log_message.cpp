@@ -37,14 +37,18 @@ void log_message(string message, levels level){
 
 void log_message(string msg, string file, int line){
     ofstream outFile(file, ios::app);
-    outFile << msg << " in line: " << line << endl;
-    outFile.close();
+    if (outFile.is_open()){
+        outFile << msg << " in line: " << line << endl;
+        outFile.close();
+    }
 }
 
 void log_message(string msg_access, string username){
     ofstream outFile("logs_file.txt", ios::app);
-    outFile << "[SECURITY] " << msg_access << "user: " << username << endl;
-    outFile.close();
+    if (outFile.is_open()){
+        outFile << "[SECURITY] " << msg_access << ", User: " << username << endl;
+        outFile.close();
+    }
 }
 
 int main(){
@@ -53,6 +57,10 @@ int main(){
     log_message("No se puede restar un tipo list con un tipo map", levels::ERROR);
     log_message("Casteo a int puede hacer perder precision del float", levels::WARNING);
     log_message("El archivo de salida se creo con exito", levels::INFO);
+    string access, username;
+    cout << "Mensaje de acceso: "; cin >> access; 
+    cout << "Username: "; cin >> username; cout << endl;
+    log_message(access, username);
     try{
         float a, b;
         cout << "Choose a: "; cin >> a;
