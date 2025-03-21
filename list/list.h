@@ -88,7 +88,7 @@ void erase(List *list, int pos) {
     list->size--;
 }
 
-void print_list(const List *list) {
+void print_list(List *list) {
     if (!list->head) {
         cout << "List is empty." << endl;
         return;
